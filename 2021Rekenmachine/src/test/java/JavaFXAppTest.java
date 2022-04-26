@@ -33,4 +33,12 @@ class JavaFXAppTest {
         Assertions.assertEquals(16, javaFXApp.computeAdd(10, 6));
         Assertions.assertEquals(4, javaFXApp.computeAdd(-1, 5));
     }
+  
+    @Test
+    void divisionTest()
+    {
+        int expected = 10;
+        int result = javaFXApp.computeDivide(20,2);
+        assertEquals(expected,result);
+    }
 }
