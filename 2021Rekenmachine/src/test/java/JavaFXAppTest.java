@@ -16,18 +16,6 @@ class JavaFXAppTest {
     }
 
     @Test
-    void computeMultiplyTest() {
-        //Arrange
-        int expected = 15;
-
-        //Act
-        int actual = javaFXApp.computeMultiply(5,3);
-
-        //Assert
-        Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
     void computeAddTest() {
         Assertions.assertEquals(6, javaFXApp.computeAdd(1, 5));
         Assertions.assertEquals(16, javaFXApp.computeAdd(10, 6));

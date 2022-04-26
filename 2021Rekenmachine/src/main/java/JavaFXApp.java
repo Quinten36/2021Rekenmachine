@@ -33,15 +33,12 @@ public class JavaFXApp extends Application {
         return number1 + number2;
     }
 
-    protected int computeMultiply (int number1, int number2) {
-        return number1 * number2;
-    }
-
     protected int computeDivide (int number1, int number2) {
         return number1/number2;
     }
 
     private void compute (String operator) {
+        IComputation computation;
 
         int result;
         int number1 = getNumberFromTextField (txtNumber1);
@@ -49,18 +46,19 @@ public class JavaFXApp extends Application {
 
         switch (operator) {
             case PLUS:
-                result = computeAdd (number1, number2);
+                computation = new MultiplyComputations();
                 break;
             case MULTIPLY:
-                result = computeMultiply (number1, number2);
+                computation = new MultiplyComputations();
                 break;
             case DIVIDE:
-                result = computeDivide (number1, number2);
+                computation = new MultiplyComputations();
                 break;
             default:
                 result = 0;
+                return;
         }
-
+        result = computation.compute(number1, number2);
         txtResult.setText (String.valueOf (result));
     }
 
