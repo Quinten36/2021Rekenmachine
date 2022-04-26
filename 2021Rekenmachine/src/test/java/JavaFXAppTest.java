@@ -26,4 +26,11 @@ class JavaFXAppTest {
         //Assert
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    void computeAddTest() {
+        Assertions.assertEquals(6, javaFXApp.computeAdd(1, 5));
+        Assertions.assertEquals(16, javaFXApp.computeAdd(10, 6));
+        Assertions.assertEquals(4, javaFXApp.computeAdd(-1, 5));
+    }
 }
