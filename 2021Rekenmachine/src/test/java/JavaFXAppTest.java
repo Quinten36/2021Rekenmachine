@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class JavaFXAppTest {
     private JavaFXApp javaFXApp;
+
     @BeforeEach
     void setUp() {
         javaFXApp = new JavaFXApp();
@@ -25,13 +26,6 @@ class JavaFXAppTest {
 
         //Assert
         Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
-    void computeAddTest() {
-        Assertions.assertEquals(6, javaFXApp.computeAdd(1, 5));
-        Assertions.assertEquals(16, javaFXApp.computeAdd(10, 6));
-        Assertions.assertEquals(4, javaFXApp.computeAdd(-1, 5));
     }
   
     @Test
