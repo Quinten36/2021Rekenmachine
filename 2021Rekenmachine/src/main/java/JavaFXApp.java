@@ -29,9 +29,7 @@ public class JavaFXApp extends Application {
         return Integer.parseInt (textField.getText ());
     }
 
-    protected int computeAdd (int number1, int number2) {
-        return number1 + number2;
-    }
+
 
     protected int computeMultiply (int number1, int number2) {
         return number1 * number2;
@@ -42,6 +40,7 @@ public class JavaFXApp extends Application {
     }
 
     private void compute (String operator) {
+        IComputation computation;
 
         int result;
         int number1 = getNumberFromTextField (txtNumber1);
@@ -49,7 +48,7 @@ public class JavaFXApp extends Application {
 
         switch (operator) {
             case PLUS:
-                result = computeAdd (number1, number2);
+                computation = new AddCompution();
                 break;
             case MULTIPLY:
                 result = computeMultiply (number1, number2);
@@ -61,6 +60,7 @@ public class JavaFXApp extends Application {
                 result = 0;
         }
 
+        result = computation.compute (number1, number2);
         txtResult.setText (String.valueOf (result));
     }
 
