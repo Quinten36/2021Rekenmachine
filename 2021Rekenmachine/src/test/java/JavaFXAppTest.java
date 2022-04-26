@@ -4,21 +4,33 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class JavaFXAppTest {
-    JavaFXApp JavaFXApp;
+    private JavaFXApp javaFXApp;
+    @BeforeEach
+    void setUp() {
+        javaFXApp = new JavaFXApp();
+    }
+
     @Test
     void aDummyTest() {
         assertEquals(0,0);
     }
 
-    @BeforeEach
-    void setUp() {
-        JavaFXApp = new JavaFXApp();
+    @Test
+    void computeMultiplyTest() {
+        //Arrange
+        int expected = 15;
+
+        //Act
+        int actual = javaFXApp.computeMultiply(5,3);
+
+        //Assert
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
     void computeAddTest() {
-        Assertions.assertEquals(6, JavaFXApp.computeAdd(1, 5));
-        Assertions.assertEquals(16, JavaFXApp.computeAdd(10, 6));
-        Assertions.assertEquals(4, JavaFXApp.computeAdd(-1, 5));
+        Assertions.assertEquals(6, javaFXApp.computeAdd(1, 5));
+        Assertions.assertEquals(16, javaFXApp.computeAdd(10, 6));
+        Assertions.assertEquals(4, javaFXApp.computeAdd(-1, 5));
     }
 }
